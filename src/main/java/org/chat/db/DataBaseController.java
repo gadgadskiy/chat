@@ -1,10 +1,11 @@
-package org.home.db;
+package org.chat.db;
 
 import java.util.Map;
 import java.util.stream.Collectors;
 
 import com.aerospike.client.AerospikeClient;
 import com.aerospike.client.Bin;
+import com.aerospike.client.IAerospikeClient;
 import com.aerospike.client.Key;
 import com.aerospike.client.Record;
 import lombok.AllArgsConstructor;
@@ -19,13 +20,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @Profile("db")
 @AllArgsConstructor
-public class DataBaseManager {
+public class DataBaseController {
     private final GlobalCache globalCache;
-    private final AerospikeClient client;
+    private final IAerospikeClient client;
     private final Key key = new Key("test", "history", "example");
 
-    @Scheduled(fixedDelay = 5000)
-    private void saveHistoryToDataBase() {
+    @Scheduled(fixedDelay = 60_000)
+    public void saveHistoryToDataBase() {
         if (globalCache.get().isEmpty()) {
             return;
         }

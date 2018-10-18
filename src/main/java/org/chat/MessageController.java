@@ -1,7 +1,7 @@
-package org.home;
+package org.chat;
 
 import lombok.AllArgsConstructor;
-import org.home.db.GlobalCache;
+import org.chat.db.GlobalCache;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;

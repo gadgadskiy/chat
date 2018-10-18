@@ -1,6 +1,7 @@
-package org.home.db;
+package org.chat.db;
 
 import com.aerospike.client.AerospikeClient;
+import com.aerospike.client.IAerospikeClient;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -21,13 +22,13 @@ public class DataBaseConfiguration {
 
     @Bean
     @ConditionalOnMissingBean
-    public AerospikeClient aerospikeClient(DataBaseProperties dataBaseProperties) {
+    public IAerospikeClient aerospikeClient(DataBaseProperties dataBaseProperties) {
         return new AerospikeClient(dataBaseProperties.getIp(), dataBaseProperties.getPort());
     }
 
     @Bean
     @ConditionalOnMissingBean
-    public DataBaseManager dataBaseManager(GlobalCache globalCache, AerospikeClient aerospikeClient) {
-        return new DataBaseManager(globalCache, aerospikeClient);
+    public DataBaseController dataBaseController(GlobalCache globalCache, IAerospikeClient aerospikeClient) {
+        return new DataBaseController(globalCache, aerospikeClient);
     }
 }

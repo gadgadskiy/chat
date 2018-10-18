@@ -1,4 +1,4 @@
-package org.home;
+package org.chat;
 
 import lombok.Getter;
 
