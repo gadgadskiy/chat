@@ -22,3 +22,6 @@
 ### Troubleshooting
 
 * If you see errors like `java: java.lang.NoSuchFieldError: Class com.sun.tools.javac.tree.JCTree$JCImport does not have member field 'com.sun.tools.javac.tree.JCTree qualid'`, try to use JDK 1.8. Once I'll align the project with the newest Java versions. Or not.
+
+### Example
+<img width="766" height="733" alt="example" src="https://github.com/user-attachments/assets/3347677a-c389-4ea0-bfa1-e93f4c002061" />
