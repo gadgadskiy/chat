@@ -19,5 +19,6 @@
 * To see history go to `http://localhost:8080/getHistory`
 * To clear history go to `http://localhost:8080/clearHistory`. **Warning!** It is irreversible.
 
-### Example
-![example](https://image.prntscr.com/image/WnotSfXCTUO5uQJuSdgLLA.png)
+### Troubleshooting
+
+* If you see errors like `java: java.lang.NoSuchFieldError: Class com.sun.tools.javac.tree.JCTree$JCImport does not have member field 'com.sun.tools.javac.tree.JCTree qualid'`, try to use JDK 1.8. Once I'll align the project with the newest Java versions. Or not.
